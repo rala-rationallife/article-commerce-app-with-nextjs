@@ -1,0 +1,27 @@
+.header {
+  height: var(--header-height);
+  display: grid;
+  grid-template-columns: subgrid;
+
+  & > * {
+    grid-column: 2 / -2;
+  }
+}
+
+.logo {
+  font-size: var(--heading2);
+}
+
+.nav {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.ul {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: var(--body);
+}

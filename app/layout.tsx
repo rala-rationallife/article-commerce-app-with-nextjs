@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { siteMeta, ogMeta } from "@lib/constants";
 
-const inter = Inter({ subsets: ["latin"] });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: "400" });
 
 const { siteTitle, siteDesc, siteUrl, siteIcon } = siteMeta;
 
@@ -36,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja">
+      <body className={notoSansJP.className}>{children}</body>
     </html>
   );
 }

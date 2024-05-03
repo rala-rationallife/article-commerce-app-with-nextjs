@@ -1,0 +1,39 @@
+.main {
+  display: grid;
+  grid-template-columns: minmax(2%, 1fr) minmax(auto, 666px) minmax(2%, 1fr);
+  row-gap: var(--body);
+  align-content: start;
+  padding-top: var(--header-height);
+
+  & button {
+    border: none;
+    border-radius: var(--body);
+    outline: revert;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    font-size: var(--body);
+    padding-block: var(--body);
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--body);
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+      font-size: calc(var(--body) * 1.5);
+    }
+  }
+
+  & > * {
+    grid-column: 2 / -2;
+  }
+}
+
+.heading {
+  text-align: center;
+}
+
+.github {
+  background-color: var(--github);
+  color: #ffffff;
+}

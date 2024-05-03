@@ -5,6 +5,7 @@
   --heading3: calc(var(--body) * 1.4);
   --header-height: calc(var(--body) * 5);
   --card-background: #ffffff;
+  --github: #222222;
 
   --max-width: 1100px;
   --border-radius: 12px;
@@ -114,6 +115,23 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+h1 {
+  font-size: var(--heading1);
+}
+
+h2 {
+  font-size: var(--heading2);
+}
+
+h3 {
+  font-size: var(--heading3);
+}
+
+p {
+  font-size: var(--body);
+  line-height: 1.8;
 }
 
 img {

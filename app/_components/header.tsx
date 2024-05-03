@@ -16,7 +16,7 @@ export function Header() {
               <Link href="/">ホーム</Link>
             </li>
             <li>
-              <Link href="/">ログイン</Link>
+              <Link href="/login">ログイン</Link>
             </li>
             <li>
               <Link href="/">

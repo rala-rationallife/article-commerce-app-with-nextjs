@@ -4,6 +4,11 @@ import "./globals.css";
 import { siteMeta, ogMeta } from "@lib/constants";
 import { Header } from "@components/header";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
+
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: "400" });
 
 const { siteTitle, siteDesc, siteUrl, siteIcon } = siteMeta;

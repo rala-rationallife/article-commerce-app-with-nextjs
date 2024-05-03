@@ -3,7 +3,8 @@
   --heading1: calc(var(--body) * 1.8);
   --heading2: calc(var(--body) * 1.6);
   --heading3: calc(var(--body) * 1.4);
-  --header-height: calc(var(--body) * 4);
+  --header-height: calc(var(--body) * 5);
+  --card-background: #ffffff;
 
   --max-width: 1100px;
   --border-radius: 12px;
@@ -48,6 +49,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --card-background: #222222;
+
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;

@@ -25,7 +25,7 @@ export function Header() {
                   height={50}
                   alt="profile_icon"
                   src={"/default_icon.png"}
-                  priority={true}
+                  priority
                 />
               </Link>
             </li>

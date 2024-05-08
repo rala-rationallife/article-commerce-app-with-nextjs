@@ -6,6 +6,9 @@ import { Header } from "@components/header";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { NextAuthProvider } from "@lib/next-auth/provider";
+import { getServerSession } from "next-auth";
+import { nextAuthOptions } from "@lib/next-auth/options";
 
 config.autoAddCss = false;
 
@@ -36,19 +39,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession(nextAuthOptions);
+
   return (
     <html lang="ja">
       <body className={notoSansJP.className}>
-        <div className="fullbleed">
-          <Header />
+        <NextAuthProvider session={session}>
+          <div className="fullbleed">
+            <Header />
 
-          {children}
-        </div>
+            {children}
+          </div>
+        </NextAuthProvider>
       </body>
     </html>
   );

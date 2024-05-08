@@ -1,8 +1,13 @@
 import Link from "next/link";
 import styles from "@styles/header.module.css";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
+import { nextAuthOptions } from "@lib/next-auth/options";
 
-export function Header() {
+export async function Header() {
+  const session = await getServerSession(nextAuthOptions);
+  const user = session?.user;
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -24,7 +29,7 @@ export function Header() {
                   width={50}
                   height={50}
                   alt="profile_icon"
-                  src={"/default_icon.png"}
+                  src={user?.image || "/default_icon.png"}
                   priority
                 />
               </Link>

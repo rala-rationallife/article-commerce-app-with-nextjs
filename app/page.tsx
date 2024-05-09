@@ -1,5 +1,6 @@
 import { Card } from "@components/card";
 import styles from "./page.module.css";
+import { getAllArticles } from "@lib/microcms/client";
 
 // 疑似データ
 const books = [
@@ -51,7 +52,10 @@ const books = [
   // 他の本のデータ...
 ];
 
-export default function Home() {
+export default async function Home() {
+  const { contents } = await getAllArticles();
+  console.log(contents);
+
   return (
     <main className={styles.main}>
       <div className={styles.grid12}>
@@ -61,30 +65,16 @@ export default function Home() {
           title="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル"
           price={2000}
         />
-        <Card
-          url="/"
-          image="/javascript-programming-basics.jpg"
-          title="タイトル"
-          price={2000}
-        />
-        <Card
-          url="/"
-          image="/javascript-programming-basics.jpg"
-          title="タイトル"
-          price={2000}
-        />
-        <Card
-          url="/"
-          image="/javascript-programming-basics.jpg"
-          title="タイトル"
-          price={2000}
-        />
-        <Card
-          url="/"
-          image="/javascript-programming-basics.jpg"
-          title="タイトル"
-          price={2000}
-        />
+        {contents.map((content) => {
+          return (
+            <Card
+              url="/"
+              image={content.thumbnail.url}
+              title={content.title}
+              price={content.price}
+            />
+          );
+        })}
       </div>
     </main>
   );

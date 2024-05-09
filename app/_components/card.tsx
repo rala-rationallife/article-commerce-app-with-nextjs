@@ -13,6 +13,7 @@ export function Card({ url, image, title, price }: Props) {
   return (
     <Link href={url} className={styles.card}>
       <Image
+        priority
         src={image}
         alt=""
         width={1280}

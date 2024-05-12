@@ -8,7 +8,7 @@
     ". . ." calc(var(--body) * 0.5)
     / calc(var(--body) * 0.5) 1fr calc(var(--body) * 0.5);
   /* height: 240px; */
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   background-color: var(--card-background);
   border-radius: var(--body);
   overflow: hidden;
